@@ -31,15 +31,23 @@ print(sparky.species)
 # b2 = {accountHoldAE: "Jane Doe", balance: 2000}  this is more error prone! 
 
 class BankAccount:
+    #instance variables or properties that describe our objects
     def __init__(self, account_holder, balance):
         self.account_holder = account_holder
         self.balance = balance
+    
+    #behaviors
+    def deposit(self, amount):
+        self.balance += amount
+
 
 ix = BankAccount("Ix", 1000)
 rose = BankAccount("Rose", 200000)
 tom = BankAccount("Tom", 9000)
 
 print(ix.account_holder)
+print(ix.balance)
+ix.deposit(90)
 print(ix.balance)
 
 
