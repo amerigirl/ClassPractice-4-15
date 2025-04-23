@@ -32,9 +32,15 @@ print(sparky.species)
 
 class BankAccount:
     #instance variables or properties that describe our objects
+
+    #class variable 
+    all_accounts =[]
+
+
     def __init__(self, account_holder, balance):
         self.account_holder = account_holder
         self.balance = balance
+        BankAccount.all_accounts.append(self)
     
     #behaviors
     def deposit(self, amount):
@@ -48,15 +54,22 @@ class BankAccount:
 
     def check_balance(self):
         return f"Your current balance is ${self.balance: .2f}"
+    
+    def account_summary(self):
+        return f"Account holder: {self.account_holder} | Balance: ${self.balance: .2f}"
+    
 
+print (BankAccount.all_accounts)
 ix = BankAccount("Ix", 1000)
+print (BankAccount.all_accounts)
 rose = BankAccount("Rose", 200000)
+print (BankAccount.all_accounts)
 tom = BankAccount("Tom", 9000)
 
-print(ix.account_holder)
-print(ix.balance)
 ix.deposit(90)
 print(ix.check_balance())
 print(ix.withdraw(100))
 
+for ba in BankAccount.all_accounts:
+    print(ba.account_summary())
 
