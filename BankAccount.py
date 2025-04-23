@@ -25,6 +25,7 @@ print(sparky.age)
 print(sparky.species)
 
 #-----------------------------
+
 #in JavaScript
 # b1 = {accountHolder: "John Doe", balance: 1000}
 # b2 = {accountHoldAE: "Jane Doe", balance: 2000}  this is more error prone! 
@@ -33,5 +34,12 @@ class BankAccount:
     def __init__(self, account_holder, balance):
         self.account_holder = account_holder
         self.balance = balance
+
+ix = BankAccount("Ix", 1000)
+rose = BankAccount("Rose", 200000)
+tom = BankAccount("Tom", 9000)
+
+print(ix.account_holder)
+print(ix.balance)
 
 
