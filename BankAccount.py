@@ -40,6 +40,14 @@ class BankAccount:
     def deposit(self, amount):
         self.balance += amount
 
+    def withdraw(self, amount):
+        if amount > self.balance:
+            print("Insufficient funds")
+        self.balance -= amount
+        return f"Withdrew ${amount: .2f}. New balance is ${self.balance: .2f}"
+
+    def check_balance(self):
+        return f"Your current balance is ${self.balance: .2f}"
 
 ix = BankAccount("Ix", 1000)
 rose = BankAccount("Rose", 200000)
@@ -48,6 +56,7 @@ tom = BankAccount("Tom", 9000)
 print(ix.account_holder)
 print(ix.balance)
 ix.deposit(90)
-print(ix.balance)
+print(ix.check_balance())
+print(ix.withdraw(100))
 
 
