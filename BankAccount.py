@@ -12,17 +12,17 @@ class Animal:
 
 rose = Animal("Rose", 5, "Dog")
 sparky = Animal("Sparky", 3, "Cat")
-print(rose)
+# print(rose)
 
 
-print(rose.name)
-print(rose.age)
-print(rose.species)
+# print(rose.name)
+# print(rose.age)
+# print(rose.species)
 
-print(sparky)
-print(sparky.name)
-print(sparky.age)
-print(sparky.species)
+# print(sparky)
+# print(sparky.name)
+# print(sparky.age)
+# print(sparky.species)
 
 #-----------------------------
 
@@ -59,17 +59,17 @@ class BankAccount:
         return f"Account holder: {self.account_holder} | Balance: ${self.balance: .2f}"
     
 
-print (BankAccount.all_accounts)
-ix = BankAccount("Ix", 1000)
-print (BankAccount.all_accounts)
-rose = BankAccount("Rose", 200000)
-print (BankAccount.all_accounts)
-tom = BankAccount("Tom", 9000)
+# print (BankAccount.all_accounts)
+# ix = BankAccount("Ix", 1000)
+# print (BankAccount.all_accounts)
+# rose = BankAccount("Rose", 200000)
+# print (BankAccount.all_accounts)
+# tom = BankAccount("Tom", 9000)
 
-ix.deposit(90)
-print(ix.check_balance())
-print(ix.withdraw(100))
+# ix.deposit(90)
+# print(ix.check_balance())
+# print(ix.withdraw(100))
 
-for ba in BankAccount.all_accounts:
-    print(ba.account_summary())
+# for ba in BankAccount.all_accounts:
+#     print(ba.account_summary())
 
