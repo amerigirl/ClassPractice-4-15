@@ -1,4 +1,15 @@
+#to create a development environment
+#python3 -m venv venv 
+
+#to activate env
+#source venv/bin/activate
+
+#to deactivete env
+#deactivate
+
+#pip install -r requirements.txt    
 from flask import Flask, jsonify, request, abort 
+
 airbnb_listings = [
     {
         "id": "1001",
@@ -78,3 +89,16 @@ airbnb_listings = [
         "description": "Bright studio with balcony overlooking the city skyline.",
     }
     ]
+
+app = Flask(__name__)
+
+@app.route("/")
+def hello_world():
+    return "Welcome to the Airbnb Listings API!"
+
+@app.route("/rentals", methods=["GET"])
+def rentals():
+
+    #for r in airbnb_listings: return r if r[id] is == id
+    rental = [r for r in airbnb_listings if r["id"] ==id]
+    return jsonify(airbnb_listings)
