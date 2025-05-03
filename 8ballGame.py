@@ -19,7 +19,27 @@ def ask_question():
     if question == "":
         print("Uh-oh! You didn't ask a question. Please try again.")
     else:
-        print()
+        num = random.randint(1, 8)
+        print("***********************************")
+        print(f"Question: {question}")
+        print("Magic 8-Ball says: ")
+        print("***********************************")
+        if num == 1:
+            print("Yes, definitely.")
+        elif num == 2:
+            print("Ask again later.")
+        elif num == 3:
+            print("Don't count on it.")
+        elif num == 4:
+            print("My sources say no.")
+        elif num == 5:
+            print("It is certain.")
+        elif num == 6:
+            print("Outlook not so good.")
+        elif num == 7:
+            print("Yes, in due time.")
+        elif num == 8:
+            print("Very doubtful.")
 
 
 
@@ -30,8 +50,10 @@ def ask_question():
 #runs game
 def run_game():
     print_menu()
+    show_help()
+    ask_question()
 
 #Lets us run the file in the console and prevents the code from runing automatically if imported to antoher file
 if __name__ == "__main__":
     run_game()
-    show_help()
+   
