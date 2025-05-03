@@ -8,6 +8,7 @@ def print_menu():
     print("3. Type 'exit' to quit the game.")
     print()
 
+
 def show_help():
     print("*************Help Menu*************")
     print("In this game, you can ask any yes or no question.")
@@ -24,34 +25,44 @@ def ask_question():
         print(f"Question: {question}")
         print("Magic 8-Ball says: ")
         print("***********************************")
-        if num == 1:
-            print("Yes, definitely.")
-        elif num == 2:
-            print("Ask again later.")
-        elif num == 3:
-            print("Don't count on it.")
-        elif num == 4:
-            print("My sources say no.")
-        elif num == 5:
-            print("It is certain.")
-        elif num == 6:
-            print("Outlook not so good.")
-        elif num == 7:
-            print("Yes, in due time.")
-        elif num == 8:
-            print("Very doubtful.")
+        print(get_response(num), "\n")
 
 
-
+def get_response(rand_num):
+    match rand_num:
+        case 1:
+            return "Yes, definitely."
+        case 2:            
+            return "Ask again later."
+        case 3:            
+            return "Don't count on it."
+        case 4:            
+            return "My sources say no."      
+        case 5:            
+            return "It is certain."        
+        case 6:            
+            return "Outlook not so good."
+        case 7:            
+            return "Yes, in due time."        
+        case 8:            
+            return "Very doubtful."
 
 
 
 
 #runs game
 def run_game():
+   while True:
     print_menu()
-    show_help()
-    ask_question()
+    choice = input("select a menu item 1-3: ").strip()
+    if choice == "1":
+        ask_question()
+    elif choice == "2":
+        print(show_help())
+    elif choice == "3":
+        print("Thank you for playing! Goodbye!")
+        break
+   
 
 #Lets us run the file in the console and prevents the code from runing automatically if imported to antoher file
 if __name__ == "__main__":
