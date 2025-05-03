@@ -58,7 +58,7 @@ def run_game():
     if choice == "1":
         ask_question()
     elif choice == "2":
-        print(show_help())
+        show_help()
     elif choice == "3":
         print("Thank you for playing! Goodbye!")
         break
